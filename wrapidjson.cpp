@@ -1,4 +1,4 @@
-// Last Update:2018-11-22 16:17:45
+// Last Update:2018-11-22 17:28:39
 /**
  * @file wrapidjson.cpp
  * @brief 
@@ -138,4 +138,9 @@ bool Wrapidjson::GetBool(rapidjson::Value &value, const char *name, bool *out)
     {
         return false;
     }
+}
+
+bool Wrapidjson::Has(const rapidjson::Value &value, const char *name)
+{
+    return value.IsObject() && value.HasMember(name);
 }
