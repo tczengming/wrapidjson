@@ -1,4 +1,4 @@
-// Last Update:2018-11-22 16:22:49
+// Last Update:2019-04-12 10:38:27
 /**
  * @file wrapidjson.h
  * @brief 
@@ -25,13 +25,13 @@ public:
     static bool HasBool(const rapidjson::Value &value, const char *name);
     static bool HasArray(const rapidjson::Value &value, const char *name);
 
-    static bool GetString(rapidjson::Value &value, const char *name, std::string *out);
-    static bool GetInt(rapidjson::Value &value, const char *name, int *out);
-    static bool GetInt64(rapidjson::Value &value, const char *name, int64_t *out);
-    static bool GetUint(rapidjson::Value &value, const char *name, uint32_t *out);
-    static bool GetUint64(rapidjson::Value &value, const char *name, uint64_t *out);
-    static bool GetDouble(rapidjson::Value &value, const char *name, double *out);
-    static bool GetBool(rapidjson::Value &value, const char *name, bool *out);
+    static bool GetString(const rapidjson::Value &value, const char *name, std::string *out, const std::string &defaultVal = "");
+    static bool GetInt(const rapidjson::Value &value, const char *name, int *out, int defaultVal = 0);
+    static bool GetInt64(const rapidjson::Value &value, const char *name, int64_t *out, int64_t defaultVal = 0);
+    static bool GetUint(const rapidjson::Value &value, const char *name, uint32_t *out, uint32_t defaultVal = 0);
+    static bool GetUint64(const rapidjson::Value &value, const char *name, uint64_t *out, uint64_t defaultVal = 0);
+    static bool GetDouble(const rapidjson::Value &value, const char *name, double *out, double defaultVal = 0.0);
+    static bool GetBool(const rapidjson::Value &value, const char *name, bool *out, bool defaultVal = false);
 
 private:
     static bool Has(const rapidjson::Value &value, const char *name);
