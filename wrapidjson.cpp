@@ -1,4 +1,4 @@
-// Last Update:2018-11-22 17:28:39
+// Last Update:2019-04-12 10:42:06
 /**
  * @file wrapidjson.cpp
  * @brief 
@@ -49,7 +49,7 @@ bool Wrapidjson::HasArray(const rapidjson::Value &value, const char *name)
     return Has(value, name) && value[name].IsArray();
 }
 
-bool Wrapidjson::GetString(rapidjson::Value &value, const char *name, std::string *out)
+bool Wrapidjson::GetString(const rapidjson::Value &value, const char *name, std::string *out, const std::string &defaultVal)
 {
     if (HasString(value, name))
     {
@@ -58,11 +58,12 @@ bool Wrapidjson::GetString(rapidjson::Value &value, const char *name, std::strin
     }
     else
     {
+        *out = defaultVal;
         return false;
     }
 }
 
-bool Wrapidjson::GetInt(rapidjson::Value &value, const char *name, int *out)
+bool Wrapidjson::GetInt(const rapidjson::Value &value, const char *name, int *out, int defaultVal)
 {
     if (HasInt(value, name))
     {
@@ -71,11 +72,12 @@ bool Wrapidjson::GetInt(rapidjson::Value &value, const char *name, int *out)
     }
     else
     {
+        *out = defaultVal;
         return false;
     }
 }
 
-bool Wrapidjson::GetInt64(rapidjson::Value &value, const char *name, int64_t *out)
+bool Wrapidjson::GetInt64(const rapidjson::Value &value, const char *name, int64_t *out, int64_t defaultVal)
 {
     if (HasInt64(value, name))
     {
@@ -84,11 +86,12 @@ bool Wrapidjson::GetInt64(rapidjson::Value &value, const char *name, int64_t *ou
     }
     else
     {
+        *out = defaultVal;
         return false;
     }
 }
 
-bool Wrapidjson::GetUint(rapidjson::Value &value, const char *name, uint32_t *out)
+bool Wrapidjson::GetUint(const rapidjson::Value &value, const char *name, uint32_t *out, uint32_t defaultVal)
 {
     if (HasUint(value, name))
     {
@@ -97,11 +100,12 @@ bool Wrapidjson::GetUint(rapidjson::Value &value, const char *name, uint32_t *ou
     }
     else
     {
+        *out = defaultVal;
         return false;
     }
 }
 
-bool Wrapidjson::GetUint64(rapidjson::Value &value, const char *name, uint64_t *out)
+bool Wrapidjson::GetUint64(const rapidjson::Value &value, const char *name, uint64_t *out, uint64_t defaultVal)
 {
     if (HasUint64(value, name))
     {
@@ -110,11 +114,12 @@ bool Wrapidjson::GetUint64(rapidjson::Value &value, const char *name, uint64_t *
     }
     else
     {
+        *out = defaultVal;
         return false;
     }
 }
 
-bool Wrapidjson::GetDouble(rapidjson::Value &value, const char *name, double *out)
+bool Wrapidjson::GetDouble(const rapidjson::Value &value, const char *name, double *out, double defaultVal)
 {
     if (HasDouble(value, name))
     {
@@ -123,11 +128,12 @@ bool Wrapidjson::GetDouble(rapidjson::Value &value, const char *name, double *ou
     }
     else
     {
+        *out = defaultVal;
         return false;
     }
 }
 
-bool Wrapidjson::GetBool(rapidjson::Value &value, const char *name, bool *out)
+bool Wrapidjson::GetBool(const rapidjson::Value &value, const char *name, bool *out, bool defaultVal)
 {
     if (HasBool(value, name))
     {
@@ -136,6 +142,7 @@ bool Wrapidjson::GetBool(rapidjson::Value &value, const char *name, bool *out)
     }
     else
     {
+        *out = defaultVal;
         return false;
     }
 }
