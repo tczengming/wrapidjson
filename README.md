@@ -1,6 +1,9 @@
 # wrapidjson
 rapidjson c++ wrapper
 
+Requirements
+  rapidjson
+
 const char *JSON = "{"
                    "\"double\":100.11,"
                    "\"int\":200,"
