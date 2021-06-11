@@ -119,13 +119,11 @@ assert(svalue == std::string("Hello World"));
 
 ## compile
 compile test
+
 cd wrapidjson/
 
-## install rapidjson
 git clone https://github.com/Tencent/rapidjson
-make
 
-## make
 cd test
-make
 
+make
